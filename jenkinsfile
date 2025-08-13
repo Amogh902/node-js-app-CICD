@@ -1,0 +1,41 @@
+pipeline {
+    agent any
+
+    environment {
+        SERVER_IP       = '3.90.163.24'  
+        SSH_CREDENTIAL  = 'nodejs-app-credentials'
+        REPO_URL        = 'https://github.com/iamtruptimane/node-js-app-CICD.git'
+        BRANCH          = 'main'
+        REMOTE_USER     = 'ubuntu'
+        REMOTE_PATH     = '/home/ubuntu/node-app'
+    }
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git branch: "${BRANCH}" , url: "${REPO_URL}"
+            }
+        }
+        stage('Upload file to Ec2') {
+            steps {
+                sshagent([SSH_CREDENTIAL]) {
+                    sh """
+                        ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${SERVER_ip} 'mkdir -p ${REMOTE_PATH}'
+                        scp -o StrictHostKeyChecking=no -r * ${REMOTE_USER}@${SERVER_IP}:${REMOTE_PATH}/
+                    """
+                }
+            }
+        }
+        stage{'Install Dependencies and  start App'} {
+            steps{
+                sshagent([SSH_CREDENTIAL])
+                sh """
+                ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${SERVER_ip}
+                cd ${REMOTE_PATH} &&
+                npm install &&
+                
+                """
+            }
+        }
+    }
+}
