@@ -26,7 +26,7 @@ We use:
 
 ---
 
-## 🛠 Prerequisites
+## Prerequisites
 
 ### 1. Infrastructure
 
@@ -171,15 +171,13 @@ pipeline {
 
 ---
 
-## Recommended Screenshot Placements
-
 1. **Job Configuration** showing "Pipeline script from SCM".
    ![](/nodejs-app-img/job-configuration.png)
 2. **Build Console Output** showing successful deployment logs.
    ![Screenshot Placeholder: Console Output](/nodejs-app-img/successful-build.png)
 3. **Browser** showing your running Node.js app.
    ![Screenshot Placeholder: App Running in Browser](/nodejs-app-img/final-output-1.png)
-   
+
    ![](/nodejs-app-img/final-output-2.png)
 
 ---
