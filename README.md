@@ -176,7 +176,7 @@ pipeline {
 1. **Job Configuration** showing "Pipeline script from SCM".
    ![](/nodejs-app-img/job-configuration.png)
 2. **Build Console Output** showing successful deployment logs.
-   ![Screenshot Placeholder: Console Output](#)
+   ![Screenshot Placeholder: Console Output](/nodejs-app-img/successful-build.png)
 3. **Browser** showing your running Node.js app.
    ![Screenshot Placeholder: App Running in Browser](#)
 
