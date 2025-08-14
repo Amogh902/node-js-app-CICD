@@ -178,7 +178,9 @@ pipeline {
 2. **Build Console Output** showing successful deployment logs.
    ![Screenshot Placeholder: Console Output](/nodejs-app-img/successful-build.png)
 3. **Browser** showing your running Node.js app.
-   ![Screenshot Placeholder: App Running in Browser](#)
+   ![Screenshot Placeholder: App Running in Browser](/nodejs-app-img/final-output-1.png)
+   
+   ![](/nodejs-app-img/final-output-2.png)
 
 ---
 
